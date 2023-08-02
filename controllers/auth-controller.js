@@ -1,6 +1,6 @@
 const bcrypt = require('bcryptjs');
 const signingKey = require('../config/keys');
-const signingKey = require('../config/keys');
+const generateToken = require('../helpers/generator-token');
 
 
 let auth = (req, res) => {
@@ -10,7 +10,7 @@ let auth = (req, res) => {
       console.log("Password", password);
 
       let token = generateToken(
-        { email: email }, signingKey.SIGNING_KEY,
+        { email: email }, signingKey.SIGNING_KEY_TOKEN,
         new Date().getTime() + (2 * 60 * 1000)
         );
 

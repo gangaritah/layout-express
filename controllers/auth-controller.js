@@ -17,7 +17,8 @@ let auth = (req, res) => {
 
       let cookieConfig = {
                             domain: 'localhost', path: '/refresh', secure: false,
-                            expires: new Date(Date.now() + 300000), httpOnly: true
+                            expires: new Date(Date.now() + 300000), httpOnly: true,
+                            signed: true
                           }
 
       return res.status(200).cookie('refresh_token', email, cookieConfig)

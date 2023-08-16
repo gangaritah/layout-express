@@ -1,7 +1,7 @@
 const { check, validationResult } = require('express-validator');
 
 
-validatorParams = [
+let validatorParams = [
   check('email').isEmail(),
   check('password').isLength({ min: 8, max: 15}),
   check('name').isLength({ min: 1, max: 255}),

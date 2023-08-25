@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 
 const register = require('./routes/register'); 
 const auth = require('./routes/auth'); 
-const profile = require('./routes/profile'); 
+const products = require('./routes/products'); 
 
 const signingKey = require('./config/keys');
 const cookieParser = require('cookie-parser');
@@ -16,7 +16,7 @@ let port = 10101
 
 app.use('/register', register);
 app.use('/auth', auth);
-app.use('/profile', profile);
+app.use('/products', products);
 
 
 app.listen(port, () => {
